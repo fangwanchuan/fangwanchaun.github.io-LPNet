@@ -1,0 +1,181 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=960">
+<title>LFNet</title>
+<link rel="stylesheet" type="text/css" href="css/site.20180920212709.css">
+<!--[if lte IE 7]>
+<link rel="stylesheet" type="text/css" href="css/site.20180920212709-lteIE7.css">
+<![endif]-->
+</head>
+<body id="body">
+<div class="pos vis section">
+<div class="vis-2 pos-2 size cont">
+<p class="para"><span class="font">Semi-supervised wildfire smoke detection
+based on smoke-aware consistency</span></p>
+</div>
+<div class="vis-2 pos-3 size-2 cont-2">
+<div class="vis-2 pos-04 size-3 cont-3">
+<p class="para-2"><span class="font-2">Chuansheng Wang*</a></span></p>
+</div>
+<div class="vis-2 pos-5 size-3 cont-4">
+<p class="para-2"><span class="font-2">Antoni Grau Saldes *</a></span></p>
+</div>
+<div class="vis-2 pos-6 size-3 cont-5">
+<p class="para-2"><span class="font-2">Edmundo Guerra Paradas *</a></span></p>
+</div>
+<div class="vis-2 pos-7 size-3 cont-6">
+<p class="para-2"><span class="font-2">Zhiguo Shen *</a></span></p>
+</div>
+</div>
+<div class="vis-2 pos-8 size-4 cont-7">
+<p class="para-2"><span class="font-3">Signal Processing
+Volume 199, October 2022, 108612</span><span class="font-3"> | </span><span class="font-4"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0165168422001529">arXiv</a></span></p>
+<p class="para-2"><span class="font-4"><a target="_blank" href="https://www.sciencedirect.com/science/article/abs/pii/S0165168422001529">Paper</a></span><span class="font-3"> | </span><span class="font-4"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0165168422001529">Supplementary</a></span><span class="font-3"> | </span><span class="font-4"><a href="http://www.icst.pku.edu.cn/struct/Seminar/Talk_BMVC18_Chenwei/index.html">PPT</a></span><span class="font-3">  </span><span class="font-4"></a></span></p>
+<p class="para-3"><span class="font-5">* indicates equal contributions.</span></p>
+</div>
+<div class="vis-2 pos-9 size-5 cont-2">
+<div class="vis-2 pos-4 size-5 colwrapper">
+<div class="vis-2 pos-4 size-6 cont-8">
+
+<picture class="img-2">
+<source srcset="images/14.png 1x, images/14.png 2x">
+<img src="images/14.png" alt="" class="js img">
+</picture>
+
+</div>
+<div class="vis-2 pos-13 size-10 cont">
+<p class="para-4"><span class="font-3">Figure 1:  The framework of the proposed LFNet v2.Similar to YOLO v3, LFNet v2 first unifies the sizes of the input images to 416 ∗ 416 ∗ 3 by using the uniformative gray padding box, and then halves the image size via Conv2D. Conv2D has the convolution kernel of 3, the step size of 2, and the padding of 1.  Each Conv2D is followed by five layers of residual blocks of the same size and dimension. Finally, after an  image of size (416, 416, 3) is input to the LFNet v2 proposed in this paper, a high-dimensional feature map of size (13, 13, 256) will be output. </span></p>
+
+</div>
+<div class="vis-2 pos-9 size-5 cont-2">
+<div class="vis-2 pos-40 size-5 colwrapper">
+<div class="vis-2 pos-40 size-6 cont-8">
+
+<picture class="img-2">
+<source srcset="images/15.png 1x, images/15.png 2x">
+<img src="images/15.png" alt="" class="js img">
+
+</picture>
+</div>
+<div class="vis-2 pos-130 size-10 cont">
+<p class="para-4"><span class="font-3">Figure 2:  Specifically, there are two  groups of different inputs, which are xl and x&micro, representing the labeled and unlabeled data, respectively.  The labeled image xl is input to the encoder network E to obtain the feature map fl = E (xl); then, the detection head H obtains prediction result pl = H(fl); finally, it is supervised by the ground truth label yl  for backpropagation. The model can obtain certain smoke detection ability using the labeled data, which can help the unlabeled data to obtain the pseudo-label y˜o. </span></p>
+
+</div>
+</div>
+</div>
+<div class="vis-2 pos-23 size-8 cont">
+<p class="para-5"><span class="font-6">Abstract</span></p>
+<p class="para-4"><span class="font-3">The semi-transparency property of smoke integrates it highly with background contextual  information in the image, which results in great visual differences in different areas. In addition,
+ the limited annotation of smoke images from real forest scenarios brings more training challenges
+ to models. In this paper, we design a semi-supervised training strategy, named smoke-aware
+ consistency, to maintain the pixel and context perceptual consistency in different backgrounds,
+ which can improve the robustness of the model under different scenarios and visually degrades.
+ Additionally, we propose a smoke detection strategy with triple classification assistance to
+ discriminate smoke and smoke-like objects. Finally, we simplified the fire smoke detection
+ network LFNet to LFNet v2, due to the proposed smoke-aware consistency and triple classification
+ assistance that can accomplish the functions of some specific modules. Extensive experiments
+ validate that the proposed method significantly outperforms state-of-the-art object detection
+ algorithms on wildfire smoke datasets and obtains satisfactory performances in challenging bad
+ weather conditions.</span></p>
+<p class="para-4"><span class="font-3">&nbsp;</span></p>
+<p class="para-5"><span class="font-6">Subjective Results</span><span class="font-3">&nbsp;</span></p>
+<p class="para-4"><span class="font-3">For the unlabeled image data xu, based on the pseudo-label y˜o, eight different patches are obtained by  random matting in eight different directions on the same overlapping area, namely xu1 and xu2. Then, one
+ of eight different image enhancements is chosen randomly and performed to one of these eight different  patches, and these enhancements are: 1. Glass Blur; 2. Histogram Equalization; 3. Motion Blur; 4. Gamma  Contrast; 5. Gaussian Noise; 6. Average Blur; 7. Fliplr; 8. Snow. The results of image enhancement and image matting are shown in Fig.3. </span></p>
+</div>
+<div class="vis-2 pos-11 size-9 cont">
+<picture class="img-4">
+<source srcset="images/11.png 1x, images/11.png 2x">
+<img src="images/11.png" alt="" class="js-2 img-3">
+</picture>
+</div>
+<div class="vis-2 pos-22 size-10 cont">
+<p class="para-4"><span class="font-3">Figure 3: Examples of data augmentation and patch interception schemes used in this smoke-aware.
+consistency.</span></p>
+</div>
+<div class="vis-2 pos-14 size-11 cont">
+<p class="para-4"><span class="font-3"> Fig.4 exhibits some
+ images from the dataset which are used in this paper.</span></p>
+</div>
+<div class="vis-2 pos-30 size-12 cont">
+<picture class="img-4">
+<source srcset="images/12.png 1x, images/12.png 2x">
+<img src="images/12.png"  alt="" class="js-3 img-5">
+</picture>
+</div>
+<div class="vis-2 pos-11 size-8 cont">
+<p class="para-5"><span class="font-6"></span></p>
+<div class="vis-2 pos-13 size-7 cont">
+<p class="para-5"><span class="font-6"></span></p>
+</div>
+<div class="vis-2 pos-222 size-11 cont">
+<p class="para-4"><span class="font-3">Figure 4:  Examples of data augmentation and patch interception schemes used in this smoke-aware
+consistency.</span></p>
+</div>
+<div class="vis-2 pos-24 size-111 cont">
+<p class="para-4"><span class="font-3">It can be seen from Fig. 4 that when smoke-aware consistency strategy is used, LFNet v2 can obtain better confidence, and the variance between IOU is smaller for different environmental backgrounds than  the case when smoke-aware consistency is not used.</span></p>
+</div>
+<div class="vis-2 pos-244 size-12 cont">
+<picture class="img-13">
+<source srcset="images/13.png 1x, images/13.png 2x">
+<img src="images/13.png"  alt="" class="js-3 img-5">
+</picture>
+</div>
+<div class="vis-2 pos-11 size-8 cont">
+<p class="para-5"><span class="font-6"></span></p>
+<div class="vis-2 pos-13 size-7 cont">
+<p class="para-5"><span class="font-6"></span></p>
+</div>
+<div class="vis-2 pos-25 size-11 cont-11">
+<p class="para-4"><span class="font-3">Figure 5:   Ablation experiment on the adaptability of smoke-aware consistency to different backgrounds.</span></p>
+</div>
+</div>
+</div>
+<div class="vis-2 pos-14 size-11 cont-12">
+<p class="para-4"><span class="font-3">See </span><span class="font-4"><a href="https://github.com/daooshee/BMVC2018website/blob/master/chen_bmvc18_sup.pdf">supplementary</a></span><span class="font-3"> for more results.</span></p>
+</div>
+<div class="vis-2 pos-114 size-16 cont-13">
+<p class="para-5"><span class="font-6">Download Links</span><span class="font-3">&nbsp;</span></p>
+<ul class="pos-21">
+<li class="para-6"><span class="font-7">&bull; </span><span class="font-7">Datasets</span></li>
+</ul>
+<p class="para-4"><span class="font-3">&nbsp;&nbsp;&nbsp;&nbsp;Dusty paired dataset (600 pairs): </span><span class="font-4"><a href="https://drive.google.com/open?id=157bjO1_cFuSd0HWDUuAmcHRJDVyWpOxB">Google Drive</a></span><span class="font-3">, </span><span class="font-4"><a href="https://pan.baidu.com/s/1ABMrDjBTeHIJGlOFIeP1IQ">Baidu Pan (Code:acp3)</a></span></p>
+<p class="para-4"><span class="font-3">&nbsp;&nbsp;&nbsp;&nbsp;Synthetic Image Pairs from Raw Images: </span><span class="font-4"><a href="https://drive.google.com/open?id=1G6fi9Kiu7CDnW2Sh7UQ5ikvScRv8Q14F">Google Drive</a></span><span class="font-3">, </span><span class="font-4"><a href="https://pan.baidu.com/s/1drsMAkRMlwd9vObAM_9Iog">Baidu Pan</a></span></p>
+<p class="para-4"><span class="font-3">&nbsp;&nbsp;&nbsp;&nbsp;Testing Images: </span><span class="font-4"><a href="https://drive.google.com/open?id=1OvHuzPBZRBMDWV5AKI-TtIxPCYY8EW70">Google Drive</a></span><span class="font-3">, </span><span class="font-4"><a href="https://pan.baidu.com/s/1G2qg3oS12MmP8_dFlVRRug">Baidu Pan</a></span></p>
+<ul class="pos-21">
+<li class="para-6"><span class="font-7">&bull; </span><span class="font-7">Codes</span></li>
+</ul>
+<p class="para-4"><span class="font-3">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="font-4"><a href="https://github.com/weichen582/RetinexNet">Github</a></span></p>
+<p class="para-4"><span class="font-3">&nbsp;</span></p>
+<p class="para-5"><span class="font-6">Citation</span></p>
+<p class="para-7"><span class="font-3">@HUANG2022108612,</span></p>
+<p class="para-7"><span class="font-3">&nbsp;&nbsp;title={SIDNet: A single image dedusting network with color cast correcti},</span></p>
+<p class="para-7"><span class="font-3">&nbsp;&nbsp;author={Jiayan Huang and Haiping Xu and Guanghai Liu and Chuansheng Wang and Zhongyi Hu and Zuoyong Li},</span></p>
+<p class="para-7"><span class="font-3">&nbsp;&nbsp;journal={Signal Processing},</span></p>
+<p class="para-7"><span class="font-3">&nbsp;&nbsp;year={2022},</span></p>
+<p class="para-7"><span class="font-3">}</span><span class="font-3">&nbsp;</span></p>
+<p class="para-4"><span class="font-3">&nbsp;</span></p>
+<p class="para-5"><span class="font-6">Reference</span></p>
+<p class="para-4"><span class="font-3">[1] Adamian, Z., Abovian, H., and Aroutiounian, V. (1996). Smoke sensor on the base of bi2o3 sesquioxide.
+Sensors and Actuators B: Chemical 35, 241–243.</span></p>
+<p class="para-4"><span class="font-3">[2] Barmpoutis, P., Dimitropoulos, K., and Grammalidis, N. (2014). Smoke detection using spatio-temporal
+analysis, motion modeling and dynamic texture recognition. In 2014 22nd European Signal Processing 437
+Conference (EUSIPCO) (IEEE), 1078–1082.</span></p>
+<p class="para-4"><span class="font-3">[3]Bochkovskiy, A., Wang, C.-Y., and Liao, H.-Y. M. (2020). Yolov4: Optimal speed and accuracy of object
+detection. arXiv preprint arXiv:2004.10934.</span></p>
+<p class="para-4"><span class="font-3">[4] Borges, P. V. K. and Izquierdo, E. (2010). A probabilistic approach for vision-based fire detection in videos.
+IEEE transactions on circuits and systems for video technology 20, 721–731.</span></p>
+<p class="para-4"><span class="font-3">[5]Carlotto, M. J., Lazaroff, M. B., and Brennan, M. W. (1993). Multispectral image processing for
+environmental monitoring. In Digital Image Processing and Visual Communications Technologies in the
+Earth and Atmospheric Sciences II (International Society for Optics and Photonics), vol. 1819, 113–124</span><span class="font-3">&nbsp;</span></p>
+<p class="para-4"><span class="font-3">[6]  Celik, T. and Demirel, H. (2009). Fire detection in video sequences using a generic color model. Fire
+safety journal 44, 147–158.</span></p>
+</div>
+</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/index.20180920212709.js"></script>
+<script type="text/javascript">
+var ver=RegExp(/Mozilla\/5\.0 \(Linux; .; Android ([\d.]+)/).exec(navigator.userAgent);if(ver&&parseFloat(ver[1])<5){document.getElementsByTagName('body')[0].className+=' whitespacefix';}
+</script>
+</body>
+</html>
